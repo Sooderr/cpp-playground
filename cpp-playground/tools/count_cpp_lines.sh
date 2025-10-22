@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+total=0
+for f in $(find . -type f -name "*.cpp"); do
+  lines=$(wc -l < "$f")
+  echo "$lines $f"
+  total=$(( total + lines ))
+done
+echo "Total lines: $total"
+
